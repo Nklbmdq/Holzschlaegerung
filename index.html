@@ -6,31 +6,55 @@
   <title>Holzschlägerung und Bringung</title>
   <style>
     :root{
-      --bg:#f7f9fb;
-      --accent: #2c8a2c; /* grün für die Überschrift */
+      --accent:#2c8a2c;
       --text:#0f1724;
       --muted:#4b5563;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    html,body{height:100%;}
+    html,body{height:100%; margin:0; overflow:hidden;}
     body{
-      margin:0;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:var(--bg);
-      color:var(--text);
       padding:32px;
+      background: linear-gradient(180deg, #000000, #0b3d0b);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
     }
+
+    @keyframes gradientAnimation {
+      0%{background-position:0% 0%}
+      50%{background-position:100% 100%}
+      100%{background-position:0% 0%}
+    }
+
     .card{
       background:white;
       padding:32px 28px;
       border-radius:12px;
-      box-shadow:0 6px 24px rgba(12,20,40,0.06);
+      box-shadow:0 6px 24px rgba(12,20,40,0.3);
       max-width:760px;
       width:100%;
       text-align:center;
+      position:relative;
+      overflow:hidden;
     }
+    h1, h2, .contact div{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    h1 img, h2 img, .contact div img{
+      width:30px;
+      height:30px;
+    }
+    h1 img:first-child, h2 img:first-child, .contact div img:first-child{
+      margin-right:10px;
+    }
+    h1 img:last-child, h2 img:last-child, .contact div img:last-child{
+      margin-left:10px;
+    }
+
     h1{
       margin:0 0 12px 0;
       font-size:36px;
@@ -40,44 +64,63 @@
     }
     h2{
       margin:0 0 18px 0;
-      font-size:20px; /* mittlere Größe */
-      color:var(--text);
+      font-size:22px;
       font-weight:600;
+      color:var(--text);
     }
     .contact{
       margin-top:18px;
       font-size:16px;
       color:var(--muted);
+      flex-direction:column;
+      gap:10px;
     }
-    .contact a{color:var(--text); text-decoration:none}
-    .label{display:block; font-weight:700; color:var(--text); margin-top:10px}
-    /* kleine Notiz für den Benutzer */
-    .note{margin-top:14px; font-size:13px; color:#6b7280}
-    /* responsive */
+    .label{display:block; font-weight:700; color:var(--text);}
+    .contact a{color:var(--text); text-decoration:none;}
+
     @media (max-width:480px){
       h1{font-size:28px}
       h2{font-size:18px}
+      h1 img, h2 img, .contact div img{display:none}
     }
   </style>
 </head>
 <body>
   <main class="card">
-    <!-- Wichtig: Wenn du die Texte ändern willst, such nach den IDs: #main-title, #subtitle, #address, #email, #phone -->
-    <h1 id="main-title">Holzschlägerung und Bringung</h1>
-    <h2 id="subtitle">Was geht um meine firma</h2>
+
+    <h1 id="main-title">
+      <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+      Holzschlägerung und Bringung
+      <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+    </h1>
+
+    <h2 id="subtitle">
+      <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+      Was geht um meine firma
+      <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+    </h2>
 
     <div class="contact">
-      <span class="label">Adresse</span>
-      <div id="address">Marijanovic Göstling 3345</div>
-
-      <span class="label">E‑Mail</span>
-      <div id="email"><a href="nedjelko.marijanovic@gmx.at">nedjelko.marijanovic@gmx.at</a></div>
-
-      <span class="label">Telefon</span>
-      <div id="phone"><a href="tel:+4306643222476">+43 066 432 224 76</a></div>
-
-      
+      <div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+        <span class="label">Adresse:</span>
+        <div id="address">Marijanovic Göstling 3345</div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+      </div>
+      <div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+        <span class="label">E-Mail:</span>
+        <div id="email"><a href="mailto:nedjelko.marijanovic@gmx.at">nedjelko.marijanovic@gmx.at</a></div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+      </div>
+      <div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+        <span class="label">Telefon:</span>
+        <div id="phone"><a href="tel:+4306643222476">+43 0664 32 22 476</a></div>
+        <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
+      </div>
     </div>
+
   </main>
 </body>
 </html>
