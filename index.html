@@ -78,10 +78,25 @@
     .label{display:block; font-weight:700; color:var(--text);}
     .contact a{color:var(--text); text-decoration:none;}
 
+    .image-gallery{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+    .image-gallery img{
+      width:160px;
+      height:auto;
+      border-radius:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+    }
+
     @media (max-width:480px){
       h1{font-size:28px}
       h2{font-size:18px}
       h1 img, h2 img, .contact div img{display:none}
+      .image-gallery img{width:100px}
     }
   </style>
 </head>
@@ -119,6 +134,13 @@
         <div id="phone"><a href="tel:+4306643222476">+43 0664 32 22 476</a></div>
         <img src="https://i.ibb.co/13pdMnx/11493764.png" alt="icon" />
       </div>
+    </div>
+
+    <div class="image-gallery">
+      <img src="https://i.postimg.cc/nhMySRmW/Whats-App-Image-2025-11-25-at-16-30-33.jpg" alt="Bild1" />
+      <img src="https://i.postimg.cc/CKSjLt4G/Whats-App-Image-2025-11-25-at-16-30-35-(1).jpg" alt="Bild2" />
+      <img src="https://i.postimg.cc/wjcmP2dJ/Whats-App-Image-2025-11-25-at-16-30-35-(2).jpg" alt="Bild3" />
+      <img src="https://i.postimg.cc/C5qZ4H4P/Whats-App-Image-2025-11-25-at-16-30-36.jpg" alt="Bild4" />
     </div>
 
   </main>
